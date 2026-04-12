@@ -1,4 +1,4 @@
-YAsSS: Yet Another Stupid Sudoku Solver
+YasSS: Yet Another Stupid Sudoku Solver
 A C++ Program written by Moritz Lenz.
 
 To build yasss, you need a C++ compiler (tested with g++ 11.4). Simply run

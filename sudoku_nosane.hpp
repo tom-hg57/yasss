@@ -1,5 +1,5 @@
 #ifndef _MORITZ_SUDOKU_NOSANE_
-#define _MORITZ_SUODKU_NOSANE_
+#define _MORITZ_SUDOKU_NOSANE_
 
 #include "sudoku.hpp"
 

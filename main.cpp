@@ -8,7 +8,7 @@
 // by the Free Software Fundation, Inc., 59 Temple Place, Suite 330, Boston,
 // MA 02111-1307 USA
 // or under the terms of the BSD Artistic License.
-// Chosse the one you like better.
+// Choose the one you like better.
 //
 // Yasss solves the sudoku game.
 // It simply reads a field from standard input, numbers separated by
@@ -39,11 +39,11 @@ void help(char* program_name) {
 	<< "\t-a|--answer\tPrints out the solved Sudoku\n"
 	<< "\t-c|--count\tPrints the number of solutions to a given Sudoku\n"
 	<< "\t-C|--canonical\tTransforms to a canonical form\n"
-	<< "\t-g|--generate[=num]\tGenerates num (default 1) Sudoku\n"
-	<< "\t-m|--minimize\tMinimalize the given Sduoku\n"
+	<< "\t-g|--generate[=num]\tGenerates num (default 1) Sudokus\n"
+	<< "\t-m|--minimize\tMinimalizes the given Sudoku\n"
 	<< "\t-r|--random[=num]\tGenerates num (default 1) Sudokus with a random number of clues\n"
 	<< "\t-s|--score\tPrints out a difficulty rating (score)\n"
-	<< "\t-S|--svg\tPrint all output Sudokus as SVG\n"
+	<< "\t-S|--svg\tPrints all output Sudokus as SVG\n"
 	<< "\t-u|--uniq\tTests if the Sudoku has a uniq solution\n"
 	<< "\n"
 	"Yasss reads Sudokus from STDIN (one per line) and prints out the solution\n"
@@ -237,7 +237,7 @@ int main(int argc, char** argv){
 			if (a.has_uniq_solution()){
 				cout << "The Sudoku has one uniq solution\n";
 			} else {
-				cout << "The Sudoku is ambigous, e.g. it has multiple solutions\n";
+				cout << "The Sudoku is ambigous, i.e. it has multiple solutions\n";
 			}
 		}
 
