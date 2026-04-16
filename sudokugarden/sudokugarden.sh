@@ -5,13 +5,23 @@ set -e
 URL="http://sudokugarden.de/de/online/"
 YAS="./yasss"
 
-# List of sudokus with 17 givens from http://www.csse.uwa.edu.au/~gordon/sudokumin.php (2006-11-26)
+# List of sudokus with 17 givens from http://www.csse.uwa.edu.au/~gordon/sudokumin.php
+# (retrieved from https://web.archive.org/web/20110414052628/http://mapleta.maths.uwa.edu.au/~gordon/sudokumin.php)
+# (last version of sudoku17 with 49151 sudokus, in web.archive.org since 2011-04-14, available until 2020_07_26)
 S17_ORIGINAL="sudoku17"
 S17_CANONICAL="sudoku17C"
 
 # Result file with downloaded sudokus
 LOG="sudokugarden.log"
 TMP=$(mktemp)
+
+if ! [ -x "${YAS}" ]; then
+    echo "${YAS} is missing or not executable"
+    echo "- Download sources from https://github.com/moritz/yasss.git"
+    echo "- Compile sources with 'make'"
+    echo "- Copy program to this directory"
+    exit 1
+fi
 
 if ! [ -e "${S17_CANONICAL}" ]; then
     echo "${S17_CANONICAL} is missing"
@@ -66,9 +76,10 @@ while [ "${DAT}" ]; do
     CAN=$(echo "${CAN}" | sed -e 's/0/_/g;s/\(.........\)/\1+/g;s/+$//')
 
     # Search canonical sudoku in sudoku17C list
-    set $(grep -n "${CAN}" "${S17_CANONICAL}" | sed -e 's/:/ /')
-    POS=$1; RAT=$2; S17=$3
-    if [ "${POS}" ]; then
+    POS_RAT_S17=$(grep -n "${CAN}" "${S17_CANONICAL}" | sed -e 's/:/ /')
+    if [ "${POS_RAT_S17}" ]; then
+        set ${POS_RAT_S17}
+        POS=$1; RAT=$2; S17=$3
         POS=$(printf "%8d" $((${POS} - 1)))
         RAT=$(printf "%6d" "${RAT}")
         CMP=$(test "${SUD}" = "${S17}" && echo "ORIG" || echo "PERM")
@@ -93,3 +104,13 @@ exit
 
 # Find doubles in sudokugarden.log
 # grep -v '^NotFound' sudokugarden.log | sort -n | uniq --all-repeated=prepend -w8
+
+# Copy sudokus from sudokugarden.log to sudoku-list
+# grep -v '^Position' sudokugarden.log | sed -e 's/^ *[^ ]*   \( *[^ ]*\) *[^ ]* *[^ ]* *\([^ ]*\) *[^ ]* *\([^ ]*\)$/\2 sudokugarden.de \3 (Score: \1)/' >> ~/.sudoku/sudoku-list
+
+# Search for not used sudokus
+# grep -v '^Position' sudokugarden.log | cut -c 1-8 | sort -n | uniq > sudokugarden.POS
+# POS=1; while [ ${POS} -le 49151 ]; do printf "%8d\n" ${POS}; POS=$((${POS} + 1)); done | diff -u - sudokugarden.POS
+
+# Count ratings in sudoku17C
+# grep -v '^Rating' sudoku17C | cut -c 1-6 | sort -n | uniq -c
