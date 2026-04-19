@@ -24,7 +24,7 @@ tests: $(BIN)
 	cd test && ./ok_tests.sh
 	cd test && ./count_tests.sh
 	cd test && ./canonical_tests.sh
-	echo "Tests finished sucessfully"
+	@echo "Tests finished sucessfully"
 
 html-doc: yasss.1.txt
 	asciidoc -d manpage yasss.1.txt

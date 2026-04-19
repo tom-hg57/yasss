@@ -8,7 +8,7 @@
 // by the Free Software Fundation, Inc., 59 Temple Place, Suite 330, Boston,
 // MA 02111-1307 USA
 // or under the terms of the BSD Artistic License.
-// Chosse the one you like better.
+// Choose the one you like better.
 //
 // Yasss solves the sudoku game.
 // It simply reads a field from standard input, numbers separated by
@@ -31,7 +31,7 @@ using namespace std;
 void help(char* program_name) {
 	cout << "Yasss " << VERSION_STRING << "\n"
 	<< "Usage:\n"
-	<< program_name << " [-acCmsSuv]\n"
+	<< program_name << " [-hVacCmsSu]\n"
 	<< program_name << " --help\n"
 	<< program_name << " --version\n"
 	<< program_name << " --generate[=num]\n"
@@ -39,11 +39,11 @@ void help(char* program_name) {
 	<< "\t-a|--answer\tPrints out the solved Sudoku\n"
 	<< "\t-c|--count\tPrints the number of solutions to a given Sudoku\n"
 	<< "\t-C|--canonical\tTransforms to a canonical form\n"
-	<< "\t-g|--generate[=num]\tGenerates num (default 1) Sudoku\n"
-	<< "\t-m|--minimize\tMinimalize the given Sduoku\n"
-	<< "\t-r|--random\tGenerate a Sudoku with a random number of clues\n"
+	<< "\t-g|--generate[=num]\tGenerates num (default 1) Sudokus\n"
+	<< "\t-m|--minimize\tMinimalizes the given Sudoku\n"
+	<< "\t-r|--random[=num]\tGenerates num (default 1) Sudokus with a random number of clues\n"
 	<< "\t-s|--score\tPrints out a difficulty rating (score)\n"
-	<< "\t-S|--svg\tPrint all output Sudokus as SVG\n"
+	<< "\t-S|--svg\tPrints all output Sudokus as SVG\n"
 	<< "\t-u|--uniq\tTests if the Sudoku has a uniq solution\n"
 	<< "\n"
 	"Yasss reads Sudokus from STDIN (one per line) and prints out the solution\n"
@@ -118,7 +118,7 @@ int main(int argc, char** argv){
 	bool do_generate = false;
 	int count = 1;
 	while (true){
-		option_result = getopt_long(argc, argv, "hvVcrsSamug::C", 
+		option_result = getopt_long(argc, argv, "hVcr::sSamug::C",
 				long_options, &option_index);
 		if (option_result == -1){
 			break;
@@ -128,9 +128,6 @@ int main(int argc, char** argv){
 			case 0:
 				help(argv[0]);
 				exit(0);
-			case 'v':
-			case 1:
-				break;
 			case 'V':
 			case 2:
 				cout << "yasss " << VERSION_STRING << "\n";
@@ -144,7 +141,7 @@ int main(int argc, char** argv){
 				print_score = true;
 				break;
 			case 'a':
-			case '5':
+			case 5:
 				print_solution = true;
 				break;
 			case 'g':
@@ -163,7 +160,7 @@ int main(int argc, char** argv){
 				exit(0);
 				break;
 			case 'm':
-			case '9':
+			case 9:
 				minimize = true;
 				break;
 			case 'u':
@@ -240,7 +237,7 @@ int main(int argc, char** argv){
 			if (a.has_uniq_solution()){
 				cout << "The Sudoku has one uniq solution\n";
 			} else {
-				cout << "The Sudoku is ambigous, e.g. it has multiple solutions\n";
+				cout << "The Sudoku is ambigous, i.e. it has multiple solutions\n";
 			}
 		}
 
