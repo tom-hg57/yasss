@@ -1,0 +1,20 @@
+# Check copyright and license for all files with "reuse lint"
+
+version = 1
+
+[[annotations]]
+path = "sudoku17"
+SPDX-FileCopyrightText = "2006 Gordon Royle <gordon(AT)csse(DOT)uwa(DOT)edu(DOT)au>"
+SPDX-License-Identifier = "CC-BY-2.5"
+
+[[annotations]]
+path = [
+    "sudoku17C",
+    "sudokugarden.log"
+]
+SPDX-FileCopyrightText = [
+    "2006 Gordon Royle <gordon(AT)csse(DOT)uwa(DOT)edu(DOT)au>",
+    "2006 Moritz Andreas Lenz <moritz.lenz@gmail.com>",
+    "2008 Thomas Günther <tom@toms-cafe.de>"
+]
+SPDX-License-Identifier = "CC-BY-2.5"

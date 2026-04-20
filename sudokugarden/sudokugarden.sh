@@ -1,4 +1,9 @@
 #!/bin/sh
+
+# SPDX-FileCopyrightText: 2008 Thomas Günther <tom@toms-cafe.de>
+#
+# SPDX-License-Identifier: GPL-1.0-or-later OR Artistic-2.0
+
 set -e
 
 # Download sudokus from sudokugarden.de
@@ -114,3 +119,8 @@ exit
 
 # Count ratings in sudoku17C
 # grep -v '^Rating' sudoku17C | cut -c 1-6 | sort -n | uniq -c
+
+# Compare canonical sudokus from "yasss -C" with sudoku17-ml from http://www.csse.uwa.edu.au/~gordon/sudokumin.php
+# wget --max-redirect=2 https://web.archive.org/web/20110414052628/http://mapleta.maths.uwa.edu.au/~gordon/sudoku17-ml
+# cat sudoku17 | ./yasss -C | diff -u sudoku17-ml -
+# cut -c 102- sudoku17C | grep -v Canonical_form | sed -e 's/_/0/g;s/\+//g' | diff -u sudoku17-ml -
