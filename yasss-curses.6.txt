@@ -48,7 +48,7 @@ BUGS
 	way the random number generator is initialized
 	- Wrong numbers under the cursor are not hilighted when 'C' is
 	pressed.
-	- Some keys are processed wrong if modifies (shift, control...) are
+	- Some keys are processed wrong if modifiers (shift, control...) are
 	pressed.
 
 AUTHOR

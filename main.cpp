@@ -1,5 +1,5 @@
 #define VERSION_STRING "0.4.7.3"
-// Yass: Yat Another Stupid Sudoku Solver
+// YasSS: Yet another stupid Sudoku Solver
 //
 // Written by Moritz Lenz <moritz.lenz@gmail.com>
 //
@@ -10,7 +10,7 @@
 // or under the terms of the BSD Artistic License.
 // Choose the one you like better.
 //
-// Yasss solves the sudoku game.
+// YasSS solves the sudoku game.
 // It simply reads fields from standard input one per line, with any character
 // other then 1..9 treated as an empty cell. If the line is shorter than 81
 // characters, all the missing numbers are treated as empty.
@@ -30,7 +30,7 @@
 using namespace std;
 
 void help(char* program_name) {
-	cout << "Yasss " << VERSION_STRING << "\n"
+	cout << "YasSS " << VERSION_STRING << "\n"
 	<< "Usage:\n"
 	<< program_name << " [-hVacCmsSu]\n"
 	<< program_name << " --help\n"
@@ -47,11 +47,11 @@ void help(char* program_name) {
 	<< "\t-S|--svg\tPrints all output Sudokus as SVG\n"
 	<< "\t-u|--uniq\tTests if the Sudoku has a uniq solution\n"
 	<< "\n"
-	"Yasss reads Sudokus from STDIN (one per line) and prints out the solution\n"
-	<< "unless one of the Options -c or -s is given.\n"
+	"YasSS reads Sudokus from STDIN (one per line) and prints out the solution\n"
+	<< "unless one of the options -c or -s is given.\n"
 	<< "Option --answer|-a forces the solved Sudoku to be printed.\n"
 	<< "If option -g or -r is given, all other options are ignored.\n"
-	<< "if option --canonical is given it is applied before all other Options\n"
+	<< "if option --canonical is given it is applied before all other options\n"
 	;
 
 }
@@ -131,7 +131,7 @@ int main(int argc, char** argv){
 				exit(0);
 			case 'V':
 			case 2:
-				cout << "yasss " << VERSION_STRING << "\n";
+				cout << "YasSS " << VERSION_STRING << "\n";
 				exit(0);
 			case 'c':
 			case 3: 
@@ -238,7 +238,7 @@ int main(int argc, char** argv){
 			if (a.has_uniq_solution()){
 				cout << "The Sudoku has one uniq solution\n";
 			} else {
-				cout << "The Sudoku is ambigous, i.e. it has multiple solutions\n";
+				cout << "The Sudoku is ambiguous, i.e. it has multiple solutions\n";
 			}
 		}
 

@@ -18,20 +18,20 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-YasSSS solves Sudokus. Without any options it reads them one per line from
+YasSS solves Sudokus. Without any options it reads them one per line from
 standard input, solves them and prints them to stanard output (in the same
 format). If there are multiple solutions, only the first found is taken.
 
 The Sudokus are read one per line, with any character other then *1*..*9*
-treated as an empty cell. If the line is shorter than 81 charaters, all the
-missing number are treated as empty. 
+treated as an empty cell. If the line is shorter than 81 characters, all the
+missing numbers are treated as empty.
 
 This behaviour can be modified be several options.
 
 OPTIONS
 -------
 -a, --answer::
-	Force the solution to be printed. When one of the '-c', '-s'-Options
+	Forces the solution to be printed. When one of the '-c', '-s'-options
 	is given, the default behaviour is to supress the output of the
 	solution. 
 -c, --count::
@@ -40,15 +40,15 @@ OPTIONS
 	many solutions.
 -C, --canonical::
 	Transforms the given Sudoku to its canonical form, that means to the
-	lexicographic least of all transformations that don't change the
+	lexicographically least of all transformations that don't change the
 	Sudoku's logic. This option is applied before all others.
 -g, --generate[=num]::
 	Generates a Sudoku, if 'num' is given, 'num' Sudokus are generated.
 	The generated Sudokus typically have 27 ... 30 numbers given.
 	If this option is given, all other options are ignored.
 -m, --minimize::
-	Delete numbers from the given Sudokus as far as possible without
-	making the Sudoku ambigous 
+	Deletes numbers from the given Sudokus as far as possible without
+	making the Sudoku ambiguous.
 -r, --random[=num]::
 	Generates a Sudoku, if 'num' is given, 'num' Sudokus are generated.
 	The generated Sudokus have a random number of initial clues.
@@ -59,8 +59,8 @@ OPTIONS
 	advanced search is disabled to obtain more acurate results.
 	See section BUGS below...
 -S, --svg::
-	Print all Sudokus as svg files to standard output. These Sudokus are
-	nicely formated. However if more then one Sudoku is printed out, you
+	Prints all Sudokus as svg files to standard output. These Sudokus are
+	nicely formatted. However if more then one Sudoku is printed out, you
 	have to take care for yourself to split it into multiple files. 
 -u, --uniq::
 	Prints a message if the Sudoku has a uniq solution. This is much

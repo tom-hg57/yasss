@@ -3,7 +3,7 @@
  * 
  * Copyright 2005, 2006 (C) Moritz Lenz <moritz@faui2k3.org> 
  *
- * Part of the sudoku Projekt.
+ * Part of the sudoku project.
  * License: take a look at main.cpp (in short: GPL or BSD License, whatever
  * you like)
  */
@@ -37,7 +37,7 @@ sudoku::sudoku(char init_data[9][9]){
 				if (allowed_set(init_data[x][y], x, y)){
 					set_item(init_data[x][y], x, y);
 				} else {
-					cerr << "The given Sudoku is errornous, ignoring conflicting numbers...\n";
+					cerr << "The given Sudoku is erroneous, ignoring conflicting numbers...\n";
 				}
 			} // if
 		} // for y
@@ -55,7 +55,7 @@ sudoku::sudoku(char* init_data){
 		if(allowed_set(init_data[i], x, y)){
 			set_item(init_data[i], x, y);
 		} else {
-			cerr << "The given Sudoku is errornous, ignoring conflicting numbers...\n";
+			cerr << "The given Sudoku is erroneous, ignoring conflicting numbers...\n";
 		}
 	}
 }
@@ -73,7 +73,7 @@ sudoku::sudoku(int init_data[9][9]){
 				if (allowed_set((char)init_data[x][y], x, y)){
 					set_item((char)init_data[x][y], x, y);
 				} else {
-					cerr << "The given Sudoku is errornous, ignoring conflicting numbers...\n";
+					cerr << "The given Sudoku is erroneous, ignoring conflicting numbers...\n";
 				}
 			} // if
 		} // for y
@@ -212,7 +212,7 @@ bool sudoku::solve(){
 	if (is_solved()){
 		solution_count ++;
 		if (solution_count % 100000 == 0){
-			cerr << "Current number of Solutions: "
+			cerr << "Current number of solutions: "
 				<< solution_count << "\n";
 		}
 		return true;
@@ -339,7 +339,7 @@ bool sudoku::simple_solve2(){
 
 
 
-	// now we've got to do the hole damn thing for the columns:
+	// now we've got to do the whole damn thing for the columns:
 	for (int y = 0; y < 9; y++){
 		int hcount[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 		for (int x = 0; x < 9; x++){
@@ -373,8 +373,8 @@ bool sudoku::simple_solve2(){
 
 
 	// now it's getting really nasty. Do the same for the 3x3-subsquares:
-	// (It's not nasty in principle, you just have to be carefull not to
-	// counfound some indices)
+	// (It's not nasty in principle, you just have to be careful not to
+	// confound some indices)
 	for (int k = 0; k < 9; k++){
 		int xb = 3 * ((int) k / 3);
 		int yb = 3 * ( k % 3);
@@ -711,7 +711,7 @@ void sudoku::to_canonical_form(void){
 
 void sudoku::perm_copy(char source[9][9], char* dest, int i, int j){
 	// copy source to dest.
-	// Applay transformations (i, j) before copying
+	// Apply transformations (i, j) before copying
 	// Generate a minimal permutation on the fly.
 	short int map[10] = {0, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 	int next_map = 1;

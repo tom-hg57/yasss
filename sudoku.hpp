@@ -3,7 +3,7 @@
  * 
  * Copyright (C) Moritz Lenz <moritz@faui2k3.org> 2005
  *
- * Part of the sudoku Projekt.
+ * Part of the sudoku project.
  * License: take a look at main.cpp (in short: GPL or BSD artistic, whatever
  * you like)
  */
@@ -13,22 +13,22 @@
 #include <iostream>
 
 // a sudoku playing field implemented as a 2d fixed size array
-// contains consitency checks and a solver.
+// contains consistency checks and a solver.
 class sudoku {
 	public:
 		sudoku();
 		// creates a field with inital data. 0 means "not set".
-		// Note that the first coordinate ist considered as x, so if
+		// Note that the first coordinate is considered as x, so if
 		// you create an array char f= {{1 ,2 ...}, {..}} you will get
-		// the transpoesed sudoku field. but don't worry, sudoku is
+		// the transposed sudoku field. but don't worry, sudoku is
 		// invariant under transposition
 		sudoku(char init_data[9][9]);
 		sudoku(char* init_data);
 
 		// creates a field with inital data. 0 means "not set".
-		// Note that the first coordinate ist considered as x, so if
+		// Note that the first coordinate is considered as x, so if
 		// you create an array char f= {{1 ,2 ...}, {..}} you will get
-		// the transpoesed sudoku field. but don't worry, sudoku is
+		// the transposed sudoku field. but don't worry, sudoku is
 		// invariant under transposition
 		sudoku(int init_data[9][9]);
 
@@ -47,7 +47,7 @@ class sudoku {
 
 		// sets item (x, y) to val
 		// assumes that it doesn't lead to an intermediate
-		// confilict with sudoku rules
+		// conflict with sudoku rules
 		// which is equivalent to saying it requires 
 		// allowed_set(val, x, y) to be true
 		void set_item(char val, int x, int y);
@@ -82,7 +82,7 @@ class sudoku {
 
 		inline int get_difficulty_rating() {return difficulty_rating;}
 
-		// set difficulty to 0 to produce the must difficult Sudokus.
+		// set difficulty to 0 to produce the most difficult Sudokus.
 		// If set to any value > 0 it strives to set that many numbers
 		// e.g. if you call random_generate(50), you will have 50
 		// numbers given.
