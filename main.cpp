@@ -11,8 +11,9 @@
 // Choose the one you like better.
 //
 // Yasss solves the sudoku game.
-// It simply reads a field from standard input, numbers separated by
-// whitespace.
+// It simply reads fields from standard input one per line, with any character
+// other then 1..9 treated as an empty cell. If the line is shorter than 81
+// characters, all the missing numbers are treated as empty.
 // It solves it (if possible), and prints the solved version in the same
 // format.
 //

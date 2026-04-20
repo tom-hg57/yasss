@@ -239,7 +239,7 @@ bool sudoku::simple_solve(){
 } // function
 
 bool sudoku::simple_solve1(){
-	// looks at every place in the lattice if there is a only one number
+	// looks at every place in the lattice if there is only one number
 	// possible. If so, the apropriate number is set.
 	bool res = false;
 	for (int x = 0; x < 9; x++){

@@ -10,7 +10,7 @@ Sudokus
 
 SYNOPSIS
 --------
- - *yasss* [-aCcgmsuv]
+ - *yasss* [-acCmsSu]
  - *yasss* -h|--help
  - *yasss* -V|--version
  - *yasss* -g|--generate[=num]
@@ -55,7 +55,7 @@ OPTIONS
 -s, --score::
 	Prints a difficulty rating for the given Sudoku. Higher numbers mean
 	more difficult Sudokus. Currently this score is 1 for each missing
-	number and 5 for each backtracking step taken. In this mode a more
+	number and 7 for each backtracking step taken. In this mode a more
 	advanced search is disabled to obtain more acurate results.
 	See section BUGS below...
 -S, --svg::
@@ -65,8 +65,6 @@ OPTIONS
 -u, --uniq::
 	Prints a message if the Sudoku has a uniq solution. This is much
 	faster then --count if there are lots of solutions
--v, --verbose::
-	Currently igonored
 
 BUGS
 ----

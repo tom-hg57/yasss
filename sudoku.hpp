@@ -1,4 +1,4 @@
-/* field.hpp
+/* sudoku.hpp
  * a sudoku playing field.
  * 
  * Copyright (C) Moritz Lenz <moritz@faui2k3.org> 2005
@@ -46,7 +46,7 @@ class sudoku {
 		void print(std::ostream &handle);
 
 		// sets item (x, y) to val
-		// assumes that it is doesn't lead to an intermediate
+		// assumes that it doesn't lead to an intermediate
 		// confilict with sudoku rules
 		// which is equivalent to saying it requires 
 		// allowed_set(val, x, y) to be true
@@ -66,7 +66,7 @@ class sudoku {
 		// try to solve the puzzle. Returns true on success.
 		bool solve();
 		
-		// returns true if there is no zero entry left, e.g. the
+		// returns true if there is no zero entry left, i.e. the
 		// problem is solved correctly.
 		bool is_solved();
 
