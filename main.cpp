@@ -132,7 +132,7 @@ int main(int argc, char** argv){
 			case 'V':
 			case 2:
 				cout << "yasss " << VERSION_STRING << "\n";
-				break;
+				exit(0);
 			case 'c':
 			case 3: 
 				print_solution_count = true;
