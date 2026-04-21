@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Thomas Günther <tom@toms-cafe.de>
+#
+# SPDX-License-Identifier: GPL-1.0-or-later OR Artistic-1.0
+
 *.o
 yasss
 yasss-curses

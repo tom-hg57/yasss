@@ -1,0 +1,15 @@
+version = 1
+
+[[annotations]]
+path = [
+    "yasss.1*",
+    "yasss-curses.6*",
+    "TODO"
+]
+SPDX-FileCopyrightText = "2006 Moritz Andreas Lenz <moritz.lenz@gmail.com>"
+SPDX-License-Identifier = "GPL-1.0-or-later OR Artistic-1.0"
+
+[[annotations]]
+path = "test/**"
+SPDX-FileCopyrightText = "2006 Moritz Andreas Lenz <moritz.lenz@gmail.com>"
+SPDX-License-Identifier = "GPL-1.0-or-later OR Artistic-1.0"

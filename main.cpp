@@ -1,14 +1,9 @@
 #define VERSION_STRING "0.4.7.3"
 // YasSS: Yet another stupid Sudoku Solver
 //
-// Written by Moritz Lenz <moritz.lenz@gmail.com>
+// SPDX-FileCopyrightText: 2006 Moritz Andreas Lenz <moritz.lenz@gmail.com>
 //
-// This program is free software. You may redistribute and change it under the
-// terms of the GNU General Public License Version 2 (June 1991) as published
-// by the Free Software Fundation, Inc., 59 Temple Place, Suite 330, Boston,
-// MA 02111-1307 USA
-// or under the terms of the BSD Artistic License.
-// Choose the one you like better.
+// SPDX-License-Identifier: GPL-1.0-or-later OR Artistic-1.0
 //
 // YasSS solves the sudoku game.
 // It simply reads fields from standard input one per line, with any character

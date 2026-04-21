@@ -1,11 +1,11 @@
 /* sudoku.hpp
  * a sudoku playing field.
  * 
- * Copyright (C) Moritz Lenz <moritz@faui2k3.org> 2005
+ * SPDX-FileCopyrightText: 2005 Moritz Andreas Lenz <moritz.lenz@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-1.0-or-later OR Artistic-1.0
  *
  * Part of the sudoku project.
- * License: take a look at main.cpp (in short: GPL or BSD artistic, whatever
- * you like)
  */
 
 #ifndef _MORITZ_FIELD_

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2006 Moritz Andreas Lenz <moritz.lenz@gmail.com>
+//
+// SPDX-License-Identifier: GPL-1.0-or-later OR Artistic-1.0
+
 #include "sudoku.hpp"
 #include "sudoku_nosane.hpp"
 #include <curses.h>

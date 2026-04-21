@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2006 Moritz Andreas Lenz <moritz.lenz@gmail.com>
+
+SPDX-License-Identifier: GPL-1.0-or-later OR Artistic-1.0
+-->
+
 YasSS: Yet another stupid Sudoku Solver
 A C++ Program written by Moritz Lenz.
 

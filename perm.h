@@ -1,6 +1,8 @@
 /* perm.h
- * Copyright (C) 2006 be Moritz Lenz. License: see file LICENSE (in short:
- * artistic or GPL) 
+ *
+ * SPDX-FileCopyrightText: 2006 Moritz Andreas Lenz <moritz.lenz@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-1.0-or-later OR Artistic-1.0
  *
  * Contains 6^4 permutations of numbers 0 ... 8
  * permutations are blockwise (0 1 2 3... 0 2 1 3 ... 1 0 2 3 ...) and these 
